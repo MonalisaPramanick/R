@@ -1,0 +1,1256 @@
+---
+title: "Student Score Predction"
+output: html_document
+---
+
+
+```{r}
+df = read.csv('test_scores.csv')
+df
+```
+
+```{r}
+df$student_id
+```
+
+```{r}
+df$posttest
+```
+
+```{r}
+df$posttest[3]
+```
+
+```{r}
+df$school[3]
+```
+
+```{r}
+df$posttest[1:5]
+```
+
+```{r}
+data.frame(df)
+```
+
+```{r}
+View(df)
+```
+
+```{r}
+names(df)
+```
+```{r}
+row.names(df)
+```
+
+```{r}
+col(df)
+```
+
+```{r}
+colnames(df)
+```
+
+```{r}
+length(df)
+```
+
+```{r}
+str(df)
+```
+```{r}
+ls(df)
+```
+
+```{r}
+ls.str(df)
+```
+
+```{r}
+ls.str(pattern = 'df')
+```
+
+```{r}
+dim(df)
+```
+
+```{r}
+dimnames(df)
+```
+
+```{r}
+head(df)
+```
+```{r}
+head(df,n=3)
+```
+
+```{r}
+head(df$student_id)
+```
+
+```{r}
+head(df$pretest)
+```
+
+```{r}
+head(df$posttest)
+```
+
+```{r}
+head(df$gender)
+```
+
+```{r}
+head(str(df))
+```
+
+```{r}
+head(structure(df))
+```
+
+```{r}
+head(structure(df$n_student))
+```
+
+```{r}
+head(structure(df$posttest))
+```
+
+```{r}
+fivenum(df$pretest)
+```
+
+```{r}
+tail(df)
+```
+
+```{r}
+tail(df, n=3)
+```
+
+```{r}
+tail(df$student_id)
+```
+
+```{r}
+tail(df$posttest)
+```
+
+```{r}
+tail(str(df))
+```
+
+```{r}
+tail(structure(df))
+```
+
+```{r}
+tail(structure(df$pretest))
+```
+
+```{r}
+class(df)
+```
+
+```{r}
+class(df$student_id)
+```
+
+```{r}
+class(df$posttest)
+```
+
+```{r}
+class(dim(df))
+```
+
+```{r}
+class(dimnames(df))
+```
+
+```{r}
+summary(df)
+```
+
+```{r}
+summary(df$student_id)
+```
+
+```{r}
+summary(df$posttest)
+```
+
+```{r}
+summary(df$gender)
+```
+
+```{r}
+mean(df$posttest)
+```
+
+```{r}
+median(df$posttest)
+```
+```{r}
+mode(df$posttest)
+```
+
+```{r}
+mad(df$posttest)
+```
+
+```{r}
+sd(df$posttest)
+```
+
+```{r}
+var(df$posttest)
+```
+
+```{r}
+quantile(df$posttest)
+```
+
+```{r}
+quantile(df$n_student)
+```
+
+```{r}
+var.test(df$pretest, df$posttest)
+```
+
+```{r}
+var.test(df$posttest, df$pretest)
+```
+
+```{r}
+tdf= attach(df)
+tdf
+```
+
+```{r}
+max(df$pretest)
+```
+
+```{r}
+min(df$pretest)
+```
+
+```{r}
+head(stack(df))
+```
+
+```{r}
+head(sort(df$pretest))
+```
+
+```{r}
+head(sort(df$posttest))
+```
+
+```{r}
+tail(sort(df$pretest))
+```
+
+```{r}
+tail(order(df$posttest))
+```
+
+```{r}
+head(rank(df$posttest))
+```
+
+```{r}
+tail(rank(df$posttest))
+```
+
+```{r}
+df[3,3]
+```
+
+```{r}
+df[1,3:5]
+```
+
+```{r}
+df[c(1,455,1000),]
+```
+
+```{r}
+df[c(511,652,121), "school"]
+```
+
+```{r}
+df[c(65,515,114), 1:5 ]
+```
+
+```{r}
+head(as.matrix(df))
+```
+
+```{r}
+tail(as.matrix(df))
+```
+
+```{r}
+head(as.matrix(df$gender))
+```
+
+```{r}
+as.matrix(df)
+```
+
+```{r}
+as.matrix(df$gender)
+```
+
+```{r}
+as.matrix.data.frame(df)
+```
+
+```{r}
+rbind(df)
+```
+
+```{r}
+head(rbind(df))
+```
+
+```{r}
+head(rbind(df$student_id))
+```
+
+```{r}
+head(rbind(df$posttest))
+```
+
+
+```{r}
+tail(rbind(df))
+```
+
+```{r}
+cbind(df)
+```
+
+```{r}
+head(cbind(df))
+```
+
+```{r}
+tail(cbind(df))
+```
+
+```{r}
+head.matrix(df)
+```
+
+```{r}
+tail.matrix(df)
+```
+
+```{r}
+cumsum(df$pretest)
+```
+
+```{r}
+head(cumsum(df$pretest))
+```
+
+```{r}
+tail(cumsum(df$pretest))
+```
+
+```{r}
+cummax(df$pretest)
+```
+
+```{r}
+head(cummax(df$pretest))
+```
+
+```{r}
+tail(cummax(df$pretest))
+```
+
+```{r}
+cummin(df$pretest)
+```
+
+```{r}
+head(cummin(df$pretest))
+```
+
+```{r}
+tail(cummin(df$pretest))
+```
+
+```{r}
+cumprod(df$posttest)
+```
+
+```{r}
+head(cumprod(df$posttest))
+```
+
+```{r}
+head(cumprod(df$posttest), n=10)
+```
+
+```{r}
+tail(cumprod(df$posttest), n=10)
+```
+
+```{r}
+table(df$student_id)
+```
+
+```{r}
+table(df$school)
+```
+
+```{r}
+head(table(df$lunch))
+```
+
+```{r}
+head(table(df$pretest))
+```
+
+```{r}
+tail(table(df$pretest))
+```
+
+```{r}
+head(table(df$pretest), n=10)
+```
+
+```{r}
+as.table(df$posttest)
+```
+
+```{r}
+head(as.table(df$posttest))
+```
+
+```{r}
+tail(as.table(df$posttest))
+```
+
+```{r}
+is.table(df)
+```
+
+```{r}
+is.data.frame(df)
+```
+
+```{r}
+is.character(df)
+```
+```{r}
+if(class(df) == 'data.frame') TRUE else FALSE
+```
+
+```{r}
+stem(df$posttest)
+```
+
+```{r}
+stem(df$posttest, scale=4)
+```
+
+```{r}
+with(df, stem(df$posttest[df$school == 'ANKYI']))
+```
+
+```{r}
+seq_along(df)
+```
+
+```{r}
+head(rnorm(df$pretest, mean = 0, sd = 1))
+```
+
+```{r}
+head(rnorm(df$posttest, mean = 0, sd = 1))
+```
+
+```{r}
+head(rnorm(df$n_student, mean = 0, sd = 1))
+```
+
+```{r}
+head(pnorm(df$pretest, mean = 0, sd = 1))
+```
+
+```{r}
+head(pnorm(df$posttest, mean = 0, sd = 1))
+```
+
+```{r}
+head(qnorm(df$pretest, mean = 0, sd = 1))
+```
+
+```{r}
+head(qnorm(df$posttest, mean = 0, sd = 1))
+```
+
+```{r}
+head(dnorm(df$pretest, mean = 0, sd = 1))
+```
+
+```{r}
+head(dnorm(df$posttest, mean = 0, sd = 1))
+```
+
+```{r}
+t.test(df$pretest, df$posttest)
+```
+
+```{r}
+t.test(df$pretest, df$posttest, var.equal = TRUE)
+```
+
+```{r}
+t.test(df$posttest, mu = 5)
+```
+
+```{r}
+t.test(df$posttest, mu = 5, alternative = 'greater')
+```
+
+```{r}
+t.test(df$posttest ~ df$school, data = df, subset = df$school %in% c('ANKYI' , 'CCAAW'))
+```
+
+```{r}
+wilcox.test(df$pretest, df$posttest)
+```
+
+```{r}
+cor(df$pretest, df$posttest)
+```
+
+```{r}
+cov(df$pretest, df$posttest)
+```
+
+```{r}
+v = as.matrix(cov(df$pretest, df$posttest))
+cov2cor(v)
+```
+
+```{r}
+cor.test(df$pretest, df$posttest)
+```
+
+```{r}
+chisq.test(df$posttest)
+```
+
+```{r}
+density(df$posttest)
+```
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+temp = df %>% filter(df$school == "ANKYI")
+temp.aov = na.omit(aov(temp$pretest ~ temp$posttest, data = temp))
+temp.aov
+```
+
+```{r}
+summary(temp.aov)
+```
+
+```{r}
+toway = aov(posttest ~ pretest * n_student, data = temp)
+toway
+```
+
+```{r}
+factor(df$school_setting)
+```
+
+```{r}
+testCol = c(rep(df$posttest - df$pretest, length(df)))
+head(testCol)
+```
+
+```{r}
+testRow = c('NMIT', 'Urban', "Non-public", 263, 'Standard', 18, '1NT20SDS09', 'Male', 'NA', 00, 00)
+testRow
+```
+
+```{r}
+test = data.frame(df, testCol)
+head(test)
+```
+
+```{r}
+test = df
+test['testRow',] = testRow
+tail(test)
+```
+
+```{r}
+test = df
+test["Test",] = NA
+tail(test)
+```
+
+```{r}
+col(temp, as.factor = F)
+```
+
+```{r}
+x = df[ , 10:11]
+head(x)
+```
+
+```{r}
+colMeans(x)
+```
+
+```{r}
+rowMeans(x)
+```
+
+```{r}
+colSums(x)
+```
+
+```{r}
+rowSums(x)
+```
+
+```{r}
+apply(df[ , 10:11], 2, mean)
+```
+
+```{r}
+apply(df[ , 10:11], 1, mean)
+```
+
+```{r}
+apply(df[ , 10:11], 2, median)
+```
+
+```{r}
+apply(df[ , 10:11], 2, var)
+```
+
+```{r}
+tapply(df$posttest, df$school, FUN = mean)
+```
+
+```{r}
+tapply(df$posttest, df$school, FUN = var)
+```
+
+```{r}
+tapply(df$posttest, df$school_setting, FUN = mean)
+```
+
+```{r}
+tapply(df$posttest, df$school_type, FUN = mean)
+```
+
+```{r}
+tapply(df$posttest, df$teaching_method, FUN = mean)
+```
+
+```{r}
+tapply(df$posttest, df$gender, FUN = mean)
+```
+
+```{r}
+tapply(df$posttest, df$lunch, FUN = mean)
+```
+
+```{r}
+aggregate(df[ , 10:11], by = list(df$school), FUN = mean)
+```
+
+```{r}
+aggregate(df[ , 10:11], by = list(df$school_setting), FUN = mean)
+```
+
+```{r}
+aggregate(df[ , 10:11], by = list(df$school_type), FUN = mean)
+```
+
+```{r}
+aggregate(df[ , 10:11], by = list(df$teaching_method), FUN = mean)
+```
+
+```{r}
+aggregate(df[ , 10:11], by = list(df$gender), FUN = mean)
+```
+
+```{r}
+aggregate(cbind(df$pretest, df$posttest), data = df, by = list(df$lunch), FUN = mean)
+```
+
+```{r}
+aggregate(df$posttest ~ df$school, data = df, FUN = mean)
+```
+
+```{r}
+aggregate(df$posttest ~ df$school * df$school_type, data = df, FUN = mean)
+```
+
+```{r}
+head(na.omit(df))
+```
+
+```{r}
+objects(df)
+```
+
+```{r}
+ls(df)
+```
+
+```{r}
+dflm = lm(posttest ~ school, data = df)
+dflm
+```
+
+```{r}
+cor.test(~ df$pretest + df$posttest, data = df)
+```
+
+```{r}
+coef(dflm)
+```
+
+```{r}
+confint(dflm)
+```
+
+```{r}
+head(fitted(dflm))
+```
+
+```{r}
+head(residuals(dflm))
+```
+
+```{r}
+formula(dflm)
+```
+
+```{r}
+dflm$call
+```
+
+```{r}
+formula(df)
+```
+
+```{r}
+df.m = apply(df[,10:11], 2, mean)
+df.m
+```
+
+```{r}
+df.sd = apply(df[ , 10:11], 2, sd)
+df.sd
+```
+
+```{r}
+df.s = apply(df[,10:11], 2, sum)
+df.s
+```
+
+```{r}
+df.1 = df.s/df.m
+df.1
+```
+
+```{r}
+df.se = df.sd / sqrt(df.1)
+df.se
+```
+
+```{r}
+df.m + df.se
+```
+
+```{r}
+max(df.m + df.se)
+```
+
+```{r}
+df.max = round(max(df.m + df.se) + 0.5, 0)
+df.max
+```
+
+```{r}
+cummeadian = function(x) {
+tmp = seq_along(x)
+for(i in 1:length(tmp)) tmp[i] = median(x[1:i])
+print(x)}
+cummeadian(temp$posttest)
+```
+
+```{r}
+log2 = function(x) log(x, base = 2)
+log2
+```
+
+```{r}
+log2(temp$posttest)
+```
+
+```{r}
+manning = function(radius, gradient, coef=0.1125) (radius^(2/3)*gradient^0.5/coef)
+manning(radius = 1, gradient = 1/500)
+```
+
+```{r}
+nlevels(df)
+```
+```{r}
+df %>% filter(df$school == 'ANKYI') %>% summary()
+```
+
+```{r}
+summary(filter(df, school == 'ANKYI'))
+
+```
+
+```{r}
+tt <- df %>%
+ filter(df$school_type == 'Public') %>%
+ select(school, n_student, pretest, posttest)
+head(tt)
+```
+
+```{r}
+tt = df %>% filter(df$gender == 'Female') %>% select(school, n_student, teaching_method, pretest, posttest)
+head(tt)
+```
+
+```{r}
+summary(tt)
+```
+
+```{r}
+tt = df %>% filter(df$gender == 'Male') %>% select(school, n_student, teaching_method, pretest, posttest)
+head(tt)
+```
+
+```{r}
+summary(tt)
+```
+
+```{r}
+tt = df %>% group_by(df$school) %>% summary()
+tt
+```
+
+```{r}
+plot(temp$pretest, temp$posttest)
+```
+
+
+```{r}
+hist(df$pretest)
+```
+
+```{r}
+hist(df$posttest)
+```
+
+```{r}
+hist(df$n_student)
+```
+
+```{r}
+hist(df$pretest, col = 'pink', xlab = 'PostTest', ylim = c(0, 0.1), freq = FALSE)
+```
+
+```{r}
+hist(df$posttest, col = 'yellow', xlab = 'PostTest', ylim = c(0, 0.1), freq = FALSE)
+```
+
+```{r}
+hist(df$n_student, col = 'red', xlab = 'PostTest', ylim = c(0, 0.1), freq = FALSE)
+```
+
+```{r}
+hist(df$posttest, freq = F)
+lines(density(df$posttest), lty = 2)
+lines(density(df$posttest, k = 'rectangular'), col='orange')
+```
+
+```{r}
+hist(df$pretest, freq = F)
+lines(density(df$pretest), lty = 2)
+lines(density(df$pretest, k = 'rectangular'), col='green')
+```
+
+```{r}
+hist(df$n_student, freq = F)
+lines(density(df$n_student), lty = 2)
+lines(density(df$n_student, k = 'rectangular'), col='red')
+```
+
+```{r}
+plot(temp$posttest, type = 'l' , col='brown')
+```
+
+```{r}
+plot(temp$pretest, type = 'l' , col='purple')
+```
+
+```{r}
+plot(temp$posttest, type = 'b', col='red')
+```
+
+```{r}
+plot(temp$pretest, type = 'b', col='red')
+```
+
+```{r}
+plot(density(df$posttest))
+```
+
+```{r}
+plot(density(df$pretest))
+```
+
+```{r}
+plot(density(df$n_student))
+```
+
+```{r}
+qqnorm(df$pretest)
+```
+
+```{r}
+qqnorm(df$posttest)
+```
+
+```{r}
+qqnorm(df$pretest, main = 'QQ plot of df$pretest', xlab = 'Theoretical', 
+ylab = 'Quantiles for df$pretest' , col='orange')
+qqline(df$pretest, lwd = 2, lty = 2)
+```
+
+```{r}
+qqnorm(df$posttest, main = 'QQ plot of df$posttest', xlab = 'Theoretical', 
+ylab = 'Quantiles for df$posttest', col='green')
+qqline(df$posttest, lwd = 2, lty = 2)
+```
+
+```{r}
+qqplot(df$pretest, df$posttest, col='red')
+```
+
+```{r}
+qqp = qqplot(df$pretest, df$posttest, col='brown')
+abline(lm(qqp$y ~ qqp$x))
+```
+
+```{r}
+boxplot(df$pretest, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest, col='yellow')
+```
+
+```{r}
+boxplot(df$pretest, df$posttest, col='yellow')
+```
+
+```{r}
+boxplot(df$pretest ~ df$school, data = df, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest ~ df$school, data = df, col='yellow')
+```
+
+```{r}
+boxplot(df$pretest ~ df$gender, data = df, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest ~ df$gender, data = df, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest ~ df$school_setting, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest ~ df$school_type, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest ~ df$teaching_method, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest ~ df$lunch, col='yellow')
+```
+
+```{r}
+boxplot(df$posttest, horizontal = T , col='yellow')
+title(xlab = 'PostTest scores')
+```
+
+```{r}
+library(dplyr)
+```
+
+```{r}
+num_studTstScor <- dplyr::select_if(df, is.numeric)
+head(num_studTstScor)
+```
+
+```{r}
+with(df, (df$posttest[df$school == 'ANKYI']))
+```
+
+```{r}
+with(df, plot(df$posttest[df$school == 'ANKYI'], pch = 0, col='blue'))
+```
+
+```{r}
+temp = df %>% filter(df$school == "ANKYI")
+plot(temp$pretest, temp$posttest, pch = 25, col='red')
+```
+```{r}
+pairs(~ pretest + posttest, data = temp, col='darkgreen')
+```
+
+```{r}
+pie(temp$pretest, labels = 'PreTest score')
+```
+
+```{r}
+dotchart(temp$posttest, col='red')
+```
+
+```{r}
+pie(temp$posttest, labels = 'PostTest score')
+```
+
+```{r}
+barplot(temp$posttest, col='blue')
+title(xlab = 'ANKYI school', ylab = 'PostTest score')
+box()
+```
+
+```{r}
+barplot(temp$posttest, horiz = T, col='pink')
+title(xlab = 'ANKYI school', ylab = 'PostTest score')
+box()
+```
+
+```{r}
+interaction.plot(temp$posttest, temp$pretest, temp$n_student, col='blue')
+```
+
+```{r}
+bp = barplot(df.m, ylim = c(0, df.max), col='lightblue')
+```
+
+
+
+```{r}
+bp
+```
+
+```{r}
+bp = barplot(df.m, ylim = c(0, df.max), col='green')
+segments(bp, df.m + df.se, bp, df.m - df.se)
+segments(bp - 0.2, df.m - df.se, bp + 0.2, df.m - df.se)
+box()
+title(xlab = 'Type of test', ylab = 'Scores')
+```
+
+```{r}
+plot(1:10, 1:10, type = 'n')
+opt = par(cex = 1.5)
+text(1, 1, expression(hat(x)))
+text(2, 2, expression(alpha==x))
+text(3, 3, expression(beta==y))
+text(4, 4, expression(frac(x, y)))
+text(5, 5, expression(sum(x)))
+text(6, 6, expression(sum(x^2)))
+text(7, 7, expression(bar(x) == sum(frac(x[i], n), i==1, n)))
+text(8, 8, expression(sqrt(x)))
+text(9, 9, expression(sqrt(x, 3)))
+```
+
+```{r}
+plot(temp$pretest ~ temp$posttest, data = temp, pch = 21, ylab = 'PreTest', xlab = 'PostTest')
+points(temp$pretest ~ temp$posttest, data = temp, pch = 19)
+legend(x = 'topright', legend = c('PreTest', 'PostTest'), pch = c(21,19), bty = 
+'n')
+```
+
+```{r}
+curve(sin, -pi*2, pi*2, lty = 2, lwd = 1.5, ylab = 'Function', ylim = c(-1,1.5), col='red')
+curve(cos, -pi*2, pi*2, lty = 3, lwd = 1, add = TRUE, col='darkgreen')
+legend(x = 'topright', legend = c('Sine', 'Cosine'), lty = c(2, 3), 
+lwd = c(1.5, 1), bty = 'n')
+title(main = 'Sine and Cosine functions')
+```
+
+```{r}
+plot(temp$pretest ~ temp$posttest, data = df, main = 'plot 1', col='brown')
+```
+
+```{r}
+plot(temp$pretest ~ temp$posttest, data = df, main = 'plot 2', col='purple')
+```
+
+```{r}
+plot(temp$pretest ~ temp$posttest, data = df, main = 'plot 3', col='blue')
+```
+
+```{r}
+plot(temp$pretest ~ temp$posttest, data = df, main = 'plot 4', col='darkblue')
+```
+
+```{r}
+par(opt)
+plot(temp$pretest ~ temp$posttest, data = df, main = 'plot 1', col='red')
+```
+
+```{r}
+plot.new()
+plot(temp$pretest ~ temp$posttest, data = df, main = 'plot 4', col='darkblue')
+```
+
+```{r}
+library(ggplot2)
+ggplot(temp, aes(x =pretest, y = posttest)) + geom_point()
+```
+
+```{r}
+ggplot(temp, aes(x = posttest, y = pretest)) + geom_line()
+```
+
+```{r}
+g1<- ggplot(temp, aes(x =posttest, y =pretest)) + geom_col()
+g1
+```
+
+```{r}
+g2<-ggplot(temp, aes(x = posttest)) + geom_histogram(binwidth = .5)
+g2
+```
+
+```{r}
+ggplot(temp, aes(x = pretest, y = posttest)) + geom_boxplot()
+```
+
+```{r}
+g3<-ggplot(temp, aes(x = pretest, y = posttest)) + geom_col(fill = "purple", colour = "black")
+g3
+```
+
+```{r}
+g4<- ggplot(df, aes(x = school_setting, y = school, fill = posttest)) + geom_col(position = "dodge")
+g4
+```
+
+```{r}
+g5<-ggplot(df, aes(x = school_type, y = school, fill = posttest)) + geom_col(position = "dodge")
+g5
+```
+
+```{r}
+g6<-ggplot(df, aes(x = teaching_method, y = school, fill = posttest)) + geom_col(position = "dodge")
+g6
+```
+
+```{r}
+g7<-ggplot(df, aes(x = n_student, y = school, fill = posttest)) + geom_col(position = "dodge")
+g7
+```
+
+```{r}
+g8<-ggplot(df, aes(x = gender, y = school, fill = posttest)) + geom_col(position = "dodge")
+g8
+```
+
+```{r}
+g9<-ggplot(df, aes(x = lunch, y = school, fill = posttest)) + geom_col(position = "dodge")
+g9
+```
+
+```{r}
+g10<-ggplot(df, aes(x = school_type, y = school, fill = school_setting)) + geom_col(position = "dodge")
+g10
+```
+
+```{r}
+g11<-ggplot(temp, aes(x = gender, y = school_setting, fill = posttest)) + geom_col()
+g11
+```
+
+```{r}
+library(cowplot)
+cowplot::plot_grid(g3,g4,g5,g6,widths = c(0.4,0.3,0.3))
+```
+
+```{r}
+cowplot::plot_grid(g7,g8, g9,widths = c(0.4,0.3,0.3))
+```
+
+```{r}
+cowplot::plot_grid(g10,g11,widths = c(0.4,0.3,0.3))
+```
+
+```{r}
+ggplot(df, aes(x = n_student, y = school)) + geom_point()
+```
+
+```{r}
+ggplot(df, aes(x = n_student, y = school)) +
+ geom_point(size = 3) + # Use a larger dot
+ theme_bw() +
+ theme(
+ panel.grid.major.x = element_blank(),
+ panel.grid.minor.x = element_blank(),
+ panel.grid.major.y = element_line(colour = "blue", linetype = "dashed")
+ )
+```
+
+```{r}
+ggplot(df, aes(x = n_student, y = school)) +
+geom_segment(aes(yend = school), xend = 0, colour = "grey50") + 
+  geom_point(size = 2)
+```
+
+```{r}
+ggplot(df,aes(x=school_setting, y=pretest, colour= gender)) + geom_point()
+```
+
+```{r}
+ggplot(df,aes(x=school_setting, y=posttest, colour = school)) + geom_point()
+```
+
+```{r}
+plot(df)
+```
+
+```{r}
+ggplot(df, aes(x =school_setting, y =n_student)) +
+ geom_point(size = 1.5)
+```
